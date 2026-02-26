@@ -122,10 +122,10 @@ const Counter = ({ value, label, suffix = "" }: { value: string; label: string; 
 
   return (
     <div className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-purple-600 mb-2">
+      <div className="text-2xl md:text-4xl font-bold text-white mb-1">
         {count}{suffix}
       </div>
-      <div className="text-purple-300 font-medium uppercase tracking-wider text-sm">{label}</div>
+      <div className="text-purple-200 font-medium uppercase tracking-wider text-xs md:text-sm">{label}</div>
     </div>
   );
 };
@@ -201,7 +201,7 @@ const TopperCard = ({ name, percentage, year, image }: { name: string; percentag
 const HomeContent = () => (
   <>
     {/* Hero Section */}
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-purple-900 pt-16">
+    <section className="relative min-h-[100vh] md:min-h-screen flex items-end md:items-center overflow-hidden bg-purple-900 pb-24 md:pb-0 pt-16 md:pt-0">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80" 
@@ -211,38 +211,39 @@ const HomeContent = () => (
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 to-purple-600/70"></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full pb-36 md:pb-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block bg-purple-500/30 text-white font-bold px-4 py-1 rounded-full text-sm mb-6 border border-purple-400/50 backdrop-blur-sm">
+          <span className="inline-block bg-purple-500/30 text-white font-bold px-3 py-1 rounded-full text-xs md:text-sm mb-4 md:mb-6 border border-purple-400/50 backdrop-blur-sm">
             ADMISSIONS OPEN 2026-27
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4 md:mb-6 leading-tight">
-            Shaping Future Leaders in <span className="text-purple-300">Commerce & Science</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white mb-3 md:mb-6 leading-tight">
+            Shaping Future <br className="md:hidden" />
+            <span className="text-purple-300">Leaders</span>
           </h1>
-          <p className="text-lg md:text-xl text-purple-100 mb-6 md:mb-8 max-w-2xl">
+          <p className="text-base md:text-xl text-purple-100 mb-4 md:mb-8 max-w-xl">
             Excellence in education with expert faculty, modern facilities, and a commitment to nurturing bright futures.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 md:gap-4">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="bg-white text-purple-700 font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all shadow-lg hover:scale-105 flex items-center gap-2"
+              className="bg-white text-purple-700 font-bold px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-lg md:rounded-xl transition-all shadow-lg hover:scale-105 flex items-center gap-2 text-sm md:text-base"
             >
-              Apply for Admission <ChevronRight size={20} />
+              Apply Now <ChevronRight size={16} md:size={20} />
             </button>
           </div>
         </motion.div>
       </div>
 
       {/* Floating Stats */}
-      <div className="absolute bottom-0 left-0 right-0 bg-purple-800/60 backdrop-blur-xl border-t border-purple-500/20 py-6 md:py-10">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <div className="absolute bottom-0 left-0 right-0 bg-purple-800/90 backdrop-blur-xl border-t border-purple-500/20 py-4 md:py-6 lg:py-10">
+        <div className="max-w-7xl mx-auto px-2 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 lg:gap-8">
           <Counter value="500" label="Students" />
           <Counter value="25" label="Teachers" />
-          <Counter value="95" label="Success Rate" suffix="%" />
+          <Counter value="95" label="Success %" />
           <Counter value="10" label="Years" />
         </div>
       </div>
